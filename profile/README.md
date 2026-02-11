@@ -2,6 +2,20 @@
 
 Dittravel is a ficticious software consulting firm created for the purposes of the project made by students of group 102 (later 501) of the courses TC3004B and TC3005B of Tec de Monterrey, Santa Fe Campus for Ditta Consulting, our formative partners. The project was carried out during the February-June 2025 semester, and resulted in the creation of the project repository [TC3005B.501](https://github.com/dittravel/TC3005B.501).
 
+## Team Members
+
+- Amilka Daniela López Aguilar, A01029277
+- Aquiba Yudah Benarroch Bittan, A01783710
+- Diego Córdova Rodríguez, A01781166
+- Facundo Gabriel Esparza, A01784521
+- Isabela Valls Chávez A01173825
+- Lorena Estefanía Chewtat Torres, A01785378
+- Luis Emilio Veledíaz Flores, A01029829
+- María Rivera Gutiérrez, A01029678
+- Mauricio Emilio Monroy González, A01029647
+- Miranda Urban Solano, A01752391
+- Valentina Castilla Melgoza, A01028209
+
 ## Slogan
 
 > "Transforming Ideas into High-Value Software. Code, Create & Deliver."
@@ -44,19 +58,3 @@ Provide professional, high-quality services. We aim for thorough serving for our
 - **Honesty:** We place transparency at the center of our decision-making.
 
 - **Loyalty:** We are committed to our clients, our team members, and our partners. We build lasting relationships based on trust, reliability, and mutual respect.
-
-## Our team
-
-The entire group was part of the project, and we all contributed  jointly to its development. We had 2 main project leadership teams:
-
-1. PM (Project Manager)
-2. LA (Lead Architect)
-
-Whose members were mostly absorbed into the following 4 development teams due to the intense requirements of the project development.
-
-1. Frontend
-2. Backend
-3. DataBase
-4. Security
-
-Each team was in charge of a different part of the project and each had their own internal hierarchies for management and for leadership.
