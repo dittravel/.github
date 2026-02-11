@@ -20,7 +20,7 @@ Dittravel is a ficticious software consulting firm created for the purposes of t
 Dittravel's logo represents a clear connection to Ditta Consulting, our formative partner, while incorporating elements that symbolize the main focus of the project, a travel management software. The design features an airplane icon, formed by a stylized "D" and "T", which are the initials of Dittravel, mantaining a strong visual link to Ditta Consulting's branding throught the use of the blue color palette. The logo's design reflects the company's commitment to innovation by keeping a unique perspective over rudimentary elements like letters.
 
 ## Vision 
-Gather top talent of professionals in information technologies and create multidisciplinary teams with skill and capacity to solve any problem regarding aoftware, information technology or other fields related and necessary toward the satisfaction of our clients.
+Gather top talent of professionals in information technologies and create multidisciplinary teams with skill and capacity to solve any problem regarding software, information technology or other fields related and necessary toward the satisfaction of our clients.
 
 ## Mission
 Provide professional, high-quality services. We aim for thorough serving for our clients by developing high-value software, all while preserving ethics and professional standards within our company.
