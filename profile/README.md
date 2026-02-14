@@ -58,3 +58,66 @@ Provide professional, high-quality services. We aim for thorough serving for our
 - **Honesty:** We place transparency at the center of our decision-making.
 
 - **Loyalty:** We are committed to our clients, our team members, and our partners. We build lasting relationships based on trust, reliability, and mutual respect.
+
+## Language and Documentation
+
+- **GitHub in English:** All repository content, including issues, pull requests, commit messages, and branch names, must be in English to maintain consistency and accessibility for international contributors.
+- **Documentation in Spanish:** Project documentation, such as test plans, design documnents, etc.
+
+### Code Style
+- **Variable Naming:** Use camelCase for variable names (e.g., `userName`, `isActive`). This applies to both JavaScript/TypeScript and any other languages used in the project.
+- **Indentation:** Respect consistent indentation. Use 2 spaces for indentation in all code files to ensure readability and uniformity across the codebase.
+- **Comments:** Place descriptive comments above each function explaining what it does. Add inline comments within functions only for complex logic that requires additional clarification.
+
+### Technology Stack
+- **Languages:** The project uses a mix of TypeScript and JavaScript within the Astro framework. Prefer TypeScript for new components and utilities to leverage type safety, falling back to JavaScript only when necessary.
+
+### Version Control
+- **Branch Naming:** Each branch name must include the owner's name and the relevant area (e.g., `diego-frontend-auth`, `isabela-backend-api`). This helps in tracking contributions and organizing work.
+- **Commit Messages:** Write clear, concise commit messages in English, starting with a verb (e.g., "Add user authentication", "Fix login bug"). Reference issue numbers when applicable.
+
+### Project Structure
+- **File Organization:** Maintain a clean folder structure. Group related files in appropriate directories (e.g., components in `src/components/`, utilities in `src/utils/`).
+- **Imports:** Use relative imports for files within the same module and absolute imports for shared utilities to keep dependencies clear.
+
+### Best Practices
+- **Code Reviews:** All pull requests require review from at least one team member before merging to ensure quality and consistency.
+- **Testing:** Write tests for new features and bug fixes. Aim for good test coverage, especially for critical functionality.
+- **Main Pull Request:** Only Diego Córdova Rodríguez (A01781166) is authorized to create pull requests to the main branch, ensuring a controlled and consistent integration process.
+
+### Team Roles
+
+- **Scrum Master:** Mauricio Emilio Monroy González
+- **Backend Team:**
+  - Lorena Estefanía Chewtat Torres
+  - Isabela Valls Chávez
+  - Facundo Gabriel Esparza
+  - Aquiba Yudah Benarroch Bittan
+- **Fullstack / Integrators:**
+  - Diego Córdova Rodríguez
+  - Mauricio Emilio Monroy González
+- **Frontend Team:**
+  - María Rivera Gutiérrez
+  - Valentina Castilla Melgoza
+  - Luis Emilio Veledíaz Flores
+  - Amilka Daniela López Aguilar
+- **Database Team:**
+  - Lorena Estefanía Chewtat Torres
+  - Amilka Daniela López Aguilar
+  - Miranda Urban Solano
+
+### Pull Request Descriptions
+
+- **Format:** `area_action`
+- **Actions:**
+  - `feat`: new features
+  - `fix`: bug fix
+  - `test`: tests added
+  - `docs`: documentation added
+  - `style`: style change
+  - `merge`: merge branch to main (include what was done)
+- **Areas:**
+  - Backend
+  - Frontend
+  - Database
+  - Integration
