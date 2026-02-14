@@ -28,6 +28,7 @@ Dittravel is a ficticious software consulting firm created for the purposes of t
 ## Index :bookmark_tabs:
 - [Our Identity :bust_in_silhouette:](#our-identity-bust_in_silhouette)
   - [Logo :art:](#logo-art)
+    - [Logo Description :mag_right:](#logo-description-mag_right)
   - [Slogan :speech_balloon:](#slogan-speech_balloon)
   - [Mission :dart:](#mission-dart)
   - [Vision :eye:](#vision-eye)
@@ -41,8 +42,10 @@ Dittravel is a ficticious software consulting firm created for the purposes of t
   - [Project Structure :file_folder:](#project-structure-file_folder)
   - [Best Practices :thumbsup:](#best-practices-thumbsup)
   - [Team Roles :technologist:](#team-roles-technologist)
-  - [Pull Request Descriptions :memo:](#pull-request-descriptions-memo)
-  
+  - [Branches and Pull Requests :seedling:](#branches-and-pull-requests-seedling)
+    - [Main Branch :world_map:](#main-branch-world_map)
+    - [Pull Request Descriptions :memo:](#pull-request-descriptions-memo)
+
 ---
 
 ## Our Identity :bust_in_silhouette:
@@ -97,6 +100,8 @@ Dittravel's logo represents a clear connection to Ditta Consulting, our formativ
 | Conflict Resolution | Address conflicts by discussing issues openly with the involved parties. If necessary, involve a neutral third party to mediate and find a resolution. |
 | Feedback and Criticism | Always provide constructive feedback. |
 | Confidentiality | Respect the confidentiality Ditta Consulting's information and any sensitive data related to the project |
+
+---
 
 ## Guidelines :scroll:
 
@@ -198,3 +203,13 @@ The Fillstack / Integrators are both capable of working in every area of the pro
   - Frontend
   - Database
   - Integration
+
+**Examples:**
+  - `feat_backend_add_user_authentication`
+  - `fix_frontend_login_bug`
+  - `test_database_user_model`
+  - `docs_integration_api_endpoints`
+  - `style_frontend_button_design`
+  - `merge_backend_feature_branch_to_main`
+
+---
