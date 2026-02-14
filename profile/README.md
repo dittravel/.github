@@ -40,7 +40,12 @@ Dittravel is a ficticious software consulting firm created for the purposes of t
   - [Technology Stack :computer:](#technology-stack-computer)
   - [Version Control :herb:](#version-control-herb)
   - [Project Structure :file_folder:](#project-structure-file_folder)
+  - [Frontend Standards :computer:](#frontend-standards-computer)
   - [Best Practices :thumbsup:](#best-practices-thumbsup)
+  - [Error Handling :warning:](#error-handling-warning)
+  - [Security Practices :lock:](#security-practices-lock)
+  - [Performance :zap:](#performance-zap)
+  - [Architecture & Best Practices Guide :building_construction:](#architecture--best-practices-guide-building_construction)
   - [Team Roles :technologist:](#team-roles-technologist)
   - [Branches and Pull Requests :seedling:](#branches-and-pull-requests-seedling)
     - [Main Branch :world_map:](#main-branch-world_map)
@@ -111,29 +116,24 @@ Dittravel's logo represents a clear connection to Ditta Consulting, our formativ
 - **Documentation in Spanish:** Project documentation, such as test plans, design documnents, etc.
 
 ### Code Style :pencil2:
-- **Variable Naming:** Use camelCase for variable names (e.g., `userName`, `isActive`). This applies to both JavaScript/TypeScript and any other languages used in the project.
-- **Indentation:** Respect consistent indentation. Use 2 spaces for indentation in all code files to ensure readability and uniformity across the codebase.
-- **Comments:** Place descriptive comments above each function explaining what it does. Add inline comments within functions only for complex logic that requires additional clarification.
+- **Variable Naming:** Use camelCase for variable names (e.g., `userName`, `isActive`).
+- **Indentation:** Use 2 spaces for consistent indentation.
+- **Comments:** Include descriptive comments above functions with purpose, parameters, and return values.
+- **ESLint:** Use ESLint for code quality and consistency.
+- **Naming Conventions:** Follow lowerCamelCase for variables/functions, UpperCamelCase for classes.
+- **Best Practices:** Prefer `const` over `let`, use async/await, arrow functions, and avoid global side effects.
 
-For each function, include a comment block that describes the function's purpose, its parameters, and its return value. For example:
-
-```javascript/**
- * Get the amount of users in the system from a specified role.
- * @param {string} role - The role to filter users by (e.g., "admin", "customer").
- * @returns {number} The number of users with the specified role.
- */
-
-function getUserCountByRole(role) {
-  // Implementation goes here
-}
-```
-
-If any console.log statements were previously used for debugging, they must be removed before merging to the main branch to maintain a clean codebase, while leaving a comment indicating that they were used for debugging purposes. Example:
+For each function, include a comment block like:
 
 ```javascript
-// console.log("Debug: User count by role:", userCount); // Used for debugging
-// remove before merging to main
+/**
+ * Get the amount of users in the system from a specified role.
+ * @param {string} role - The role to filter users by.
+ * @returns {number} The number of users.
+ */
 ```
+
+Remove console.log statements before merging, leaving debug comments if needed.
 
 ### Technology Stack :computer:
 
@@ -150,13 +150,86 @@ If any console.log statements were previously used for debugging, they must be r
 - **Commit Messages:** Write clear, concise commit messages in English, starting with a verb (e.g., "Add user authentication", "Fix login bug"). Reference issue numbers when applicable.
 
 ### Project Structure :file_folder:
-- **File Organization:** Maintain a clean folder structure. Group related files in appropriate directories (e.g., components in `src/components/`, utilities in `src/utils/`).
-- **Imports:** Use relative imports for files within the same module and absolute imports for shared utilities to keep dependencies clear.
+- **File Organization:** Maintain clean folder structures, grouping related files (e.g., components in `src/components/`, utilities in `src/utils/`).
+- **Imports:** Use relative imports for modules, absolute for shared utilities.
+
+### Frontend Standards :computer:
+
+#### Code Quality
+- Follow consistent naming conventions for variables, functions, and files.
+- Ensure code is modular and reusable.
+
+#### Naming Conventions
+
+*This was taken directly from the Frontend's CONTRIBUTING.md file.*
+
+When working with variables, functions, and constants in Astro projects, adhere to the following standards:
+
+- **Variables**
+  - Use `camelCase` for variable names.
+  - Variable names should be descriptive and meaningful. (e.g., `userName`)
+  - Avoid single-letter variable names unless used in loops (e.g., `i`, `j`).
+
+- **Functions**
+  - Use `camelCase` for function names.
+  - Function names should clearly describe their purpose or action (e.g., `fetchData`, `calculateTotal`).
+  - Keep functions small and focused on a single responsibility.
+  - Use arrow functions (`const myFunction = () => {}`) unless a named function is required.
+
+- **Constants**
+  - Use `UPPER_SNAKE_CASE` for constants.
+  - Constants should be declared using `const` and should not be reassigned.
+  - Group related constants together for better readability.
+  - Constants names should be descriptive and meaningful.
+
+- **Environment Variables**
+  - Use `UPPER_SNAKE_CASE` for environment variable names.
+  - Prefix environment variables with the project name or a relevant namespace (e.g., `ASTRO_API_KEY`).
+  - Store sensitive environment variables in a `.env` file and **NEVER** commit this file to version control.
+  - Access environment variables using `import.meta.env` in Astro.
+
+#### Comments
+*This was taken directly from the Frontend's CONTRIBUTING.md file.*
+
+- Start the file with a short paragraph explaining its purpose.
+- Document the purpose of functions, components, and modules with comments at the top of their definitions.
+- Use comments to clarify complex or non-obvious code logic.
+- Write comments in plain English and keep them concise.
+- Use single-line comments (`<!-- comment -->`) for brief explanations and multi-line comments (`<!-- \n comment  \n -->`) for detailed descriptions.
+- Avoid redundant comments that simply restate the code.
+- Use `ToDo:` comments to indicate areas that need further work or improvement.
+- For debugging purposes, use comments to explain temporary code and remove them once the code is finalized.
+- Maintain updated comments to reflect any changes in the code.
+- Avoid leaving commented-out code in the final version unless it serves a clear purpose.
 
 ### Best Practices :thumbsup:
 - **Code Reviews:** All pull requests require review from at least one team member before merging to ensure quality and consistency.
 - **Testing:** Write tests for new features and bug fixes.
 - **Documentation:** Update documentation with any changes to the codebase, including new features, API endpoints, and architectural decisions.
+
+### Error Handling :warning:
+
+*Taken from the Backend's CONTRIBUTING.md file.*
+
+- Use async/await with try-catch for asynchronous errors.
+- Document API errors and test error flows.
+
+### Security Practices :lock:
+
+*Taken from the Backend's CONTRIBUTING.md file.*
+
+- Secure HTTP headers and validate inputs.
+- Protect passwords with hashing.
+- Run as non-root.
+- **Module Loading Security:** Do not use user-provided variables in module paths for `require()` or `import()` to prevent unauthorized module loading.
+- **Child Process Safety:** Validate and sanitize any inputs passed to child processes to prevent command injection.
+- **Error Detail Hiding:** Do not expose detailed error information (e.g., stack traces, internal paths) in API responses to prevent leaking sensitive data.
+
+### Architecture & Best Practices Guide :building_construction:
+
+*Taken from the Backend's CONTRIBUTING.md file.*
+
+Organize projects into four layers: Models (data access), Services (business logic), Controllers (request handling), and Router (endpoints). This promotes modularity, testability, and maintainability. Use parameterized queries, keep logic pure, and handle errors appropriately.
 
 ### Team Roles :technologist:
 
