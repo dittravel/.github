@@ -155,8 +155,8 @@ If any console.log statements were previously used for debugging, they must be r
 
 ### Best Practices :thumbsup:
 - **Code Reviews:** All pull requests require review from at least one team member before merging to ensure quality and consistency.
-- **Testing:** Write tests for new features and bug fixes. Aim for good test coverage, especially for critical functionality.
-- **Main Pull Request:** Only Diego Córdova Rodríguez (A01781166) is authorized to create pull requests to the main branch, ensuring a controlled and consistent integration process.
+- **Testing:** Write tests for new features and bug fixes.
+- **Documentation:** Update documentation with any changes to the codebase, including new features, API endpoints, and architectural decisions.
 
 ### Team Roles :technologist:
 
