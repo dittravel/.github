@@ -110,6 +110,26 @@ Dittravel's logo represents a clear connection to Ditta Consulting, our formativ
 - **Indentation:** Respect consistent indentation. Use 2 spaces for indentation in all code files to ensure readability and uniformity across the codebase.
 - **Comments:** Place descriptive comments above each function explaining what it does. Add inline comments within functions only for complex logic that requires additional clarification.
 
+For each function, include a comment block that describes the function's purpose, its parameters, and its return value. For example:
+
+```javascript/**
+ * Get the amount of users in the system from a specified role.
+ * @param {string} role - The role to filter users by (e.g., "admin", "customer").
+ * @returns {number} The number of users with the specified role.
+ */
+
+function getUserCountByRole(role) {
+  // Implementation goes here
+}
+```
+
+If any console.log statements were previously used for debugging, they must be removed before merging to the main branch to maintain a clean codebase, while leaving a comment indicating that they were used for debugging purposes. Example:
+
+```javascript
+// console.log("Debug: User count by role:", userCount); // Used for debugging
+// remove before merging to main
+```
+
 ### Technology Stack :computer:
 
 - **Languages:** The project uses a mix of TypeScript and JavaScript within the Astro framework. Prefer TypeScript for new components, falling back to JavaScript only when necessary.
@@ -135,30 +155,39 @@ Dittravel's logo represents a clear connection to Ditta Consulting, our formativ
 
 ### Team Roles :technologist:
 
-- **Scrum Master:** Mauricio Emilio Monroy González
-- **Backend Team:**
-  - Lorena Estefanía Chewtat Torres
-  - Isabela Valls Chávez
-  - Facundo Gabriel Esparza
-  - Aquiba Yudah Benarroch Bittan
-- **Fullstack / Integrators:**
-  - Diego Córdova Rodríguez
-  - Mauricio Emilio Monroy González
-- **Frontend Team:**
-  - María Rivera Gutiérrez
-  - Valentina Castilla Melgoza
-  - Luis Emilio Veledíaz Flores
-  - Amilka Daniela López Aguilar
-- **Database Team:**
-  - Lorena Estefanía Chewtat Torres
-  - Amilka Daniela López Aguilar
-  - Miranda Urban Solano
+The team is organized into specific roles, each one having a designated codeowner, who is responsible for overseeing the work in their area and merging pull requests to the main branch.
 
-### Pull Request Descriptions :memo:
+The scrum master is responsible for coordinating the team, facilitating communication, and ensuring that the project stays on track.
+
+The Fillstack / Integrators are both capable of working in every area of the project, as well as merging pull requests to the main branch.
+
+| Role | Description | Team Members | Codeowner |
+|-|-|-|- |
+| Fullstack / Integrators | Work across all areas of the project, ensuring integration and consistency. | Diego Córdova Rodríguez, Mauricio Emilio Monroy González | - |
+| Scrum Master | Coordinates the team, facilitates communication, and ensures project progress. | Lorena Chewtat | - |
+| Frontend | Focuses on client-side development, user interface design, and user experience. | María Rivera, Valentina Castilla, Luis Emilio Veledíaz, Amilka López | María Rivera |
+| Backend | Focuses on server-side development, API design, and database management. | Lorena Chewtat, Isabela Valls, Facundo Esparza, Aquiba Benarroch | Aquiba Benarroch |
+| Database | Focuses on database design, management, and optimization. | Lorena Chewtat, Amilka López, Miranda Urban | Lorena Chewtat |
+
+### Branches and Pull Requests :seedling:
+
+#### Main Branch :world_map:
+
+- The main branch of the repository will be `main`, for both [Frontend](https://github.com/dittravel/TC3005B.501-Frontend) and [Backend](https://github.com/dittravel/TC3005B.501-Backend). This branch will always contain the latest stable version of the project, and all pull requests must be merged into this branch after passing code review and testing.
+- According to the team roles, only the following individuals are authorized to create pull requests to the main branch:
+  - Fullstack / Integrators:
+    - **Diego Córdova**
+     - **Mauricio Monroy**
+    - Codeowners of each area:
+     - **María Rivera**
+     - **Aquiba Benarroch**
+     - **Lorena Chewtat**
+
+#### Pull Request Descriptions :memo:
 
 - **Format:** `area_action`
 - **Actions:**
-  - `feat`: new features
+  - feat`: new features
   - `fix`: bug fix
   - `test`: tests added
   - `docs`: documentation added
