@@ -37,6 +37,7 @@ Dittravel is a ficticious software consulting firm created for the purposes of t
 - [Guidelines :scroll:](#guidelines-scroll)
   - [Language and Documentation :book:](#language-and-documentation-book)
   - [Code Style :pencil2:](#code-style-pencil2)
+  - [Database Conventions 🔤:](#database-conventions-)
   - [Technology Stack :computer:](#technology-stack-computer)
   - [Version Control :herb:](#version-control-herb)
   - [Project Structure :file_folder:](#project-structure-file_folder)
@@ -139,6 +140,33 @@ For each function, include a comment block like:
 ```
 
 Remove console.log statements before merging, leaving debug comments if needed.
+
+### Database Conventions 🔡:
+*This is based directly from Coconsulting's database files.*
+
+### Naming Conventions
+
+#### Table Names
+- Use **lowercase** with **underscores** for multi-word names
+- Use **backticks** when table names are reserved keywords (example: `` `User` ``, `` `Role` ``)
+- Examples: `Request`, `Request_status`, `Route_Request`, `Receipt_Type`
+
+#### Column Names
+- Use **lowercase** with **underscores** for multi-word names
+- Use **snake_case** for consistency
+- Use names that clearly indicate the data type and purpose
+- Foreign key columns should include the referenced table name and `id` suffix (example: `user_id`, `request_id`)
+- Examples: `user_name`, `creation_date`, `request_status_id`, `phone_number`
+
+#### Script Organization
+Scripts should be organized like this:
+1. **Scheme.sql** - Database and table creation
+2. **Prepopulate.sql** - Reference data (roles, statuses, types)
+3. **Dummy.sql** - Sample data for testing and development
+4. **Views.sql** - Database views for more complex queries
+5. **Triggers.sql** - Automated database triggers
+
+
 
 ### Technology Stack :computer:
 
