@@ -47,10 +47,15 @@ Dittravel is a ficticious software consulting firm created for the purposes of t
   - [Performance :zap:](#performance-zap)
   - [Architecture & Best Practices Guide :building_construction:](#architecture--best-practices-guide-building_construction)
   - [Team Roles :technologist:](#team-roles-technologist)
+    - [Project Structure by Team 📁](#project-structure-by-team-)
   - [Branches and Pull Requests :seedling:](#branches-and-pull-requests-seedling)
     - [Main Branch :world_map:](#main-branch-world_map)
     - [Pull Request Descriptions :memo:](#pull-request-descriptions-memo)
-
+  - [Issues 📖](#issues-)
+    - [Issue Types 📑](#issue-types-)
+    - [Issue Template Format ℹ️](#issue-template-format-ℹ%EF%B8%8F)
+  - [Label Directory 🏷️](#label-directory-%EF%B8%8F)
+  - [Issue Example: Task](#issue-example-task)
 ---
 
 ## Our Identity :bust_in_silhouette:
@@ -237,7 +242,7 @@ The team is organized into specific roles, each one having a designated codeowne
 
 The scrum master is responsible for coordinating the team, facilitating communication, and ensuring that the project stays on track.
 
-The Fillstack / Integrators are both capable of working in every area of the project, as well as merging pull requests to the main branch.
+The Fullstack / Integrators are both capable of working in every area of the project, as well as merging pull requests to the main branch.
 
 | Role | Description | Team Members | Codeowner |
 |-|-|-|- |
@@ -246,6 +251,23 @@ The Fillstack / Integrators are both capable of working in every area of the pro
 | Frontend | Focuses on client-side development, user interface design, and user experience. | María Rivera, Valentina Castilla, Luis Emilio Veledíaz, Amilka López | María Rivera |
 | Backend | Focuses on server-side development, API design, and database management. | Lorena Chewtat, Isabela Valls, Facundo Esparza, Aquiba Benarroch | Aquiba Benarroch |
 | Database | Focuses on database design, management, and optimization. | Lorena Chewtat, Amilka López, Miranda Urban | Lorena Chewtat |
+ 
+ ---
+
+### Project Structure by Team 📁
+#### Backend Team
+**Folders that belong to this role:** `/certs`, `/controllers`, `/middleware`, `/models`, `/openapi`, `/routes`, `/services`
+
+#### Database Team
+**Folders that belong to this role:** `/database`, `/openapi`
+
+#### Frontend Team
+**Folders that belong to this role:** `/cypress`, `/public`, `/src`
+
+#### Fullstack / Integrators
+**Folders that belong to this role:** All directories
+
+---
 
 ### Branches and Pull Requests :seedling:
 
@@ -286,3 +308,96 @@ The Fillstack / Integrators are both capable of working in every area of the pro
   - `merge_backend_feature_branch_to_main`
 
 ---
+
+### Issues 📖
+#### Issue Types 📑
+
+**All** issues in the repository must be categorized with one of the following types. This allows clear organization and also helps the entire team understand the scope and kind of each issue.
+
+| Type | Description | Example |
+|-|-|-|
+| **Task** | A specific piece of work that needs to be done. | "Create endpoint for trip retrieval" |
+| **Sub-Task** | A small piece of work that is part of a larger Task. | "Add input validation to trip endpoint" |
+| **Bug** | An unexpected problem or behavior that needs to be fixed. | "Login endpoint returns error" |
+| **Feature** | A new functionality or enhancement to the system. | "Add filter by date to trip list" |
+| **Documentation** | Documentation that needs to be written or updated. | "Document API authentication flow" |
+| **Test** | Tests that need to be written for existing or new code. | "Write tests for expense validation" |
+
+---
+---
+#### Issue Template Format ℹ️
+
+Every new issue ***must*** follow this structure:
+
+ >[TYPE]: Brief Title
+
+ >#### Description
+ >Clear explanation of what needs to be done or what the issue is about.
+
+ >#### Details
+ >- Bullet point 1
+ >- Bullet point 2
+ >- Bullet point 3
+
+ >#### Checklist to complete issue
+ >- [ ] To-Do 1
+ >- [ ] To-Do 2
+
+ >#### Labels
+ >Apply relevant labels from the Backend Label Set.
+
+--- 
+
+### Label Directory 🏷️
+
+*This was taken directly from Coconsulting's repositories and issues.*
+
+| Label | Meaning |
+|-|-|
+| **admin** | Admin role related issues |
+| **API** | API related issues and endpoints |
+| **applicant** | Applicant role related issues |
+| **authorizer** | Authorizer role related issues |
+| **backend** | Backend/server-side related issues |
+| **chore** | Something needs to be done (maintenance, refactoring, setup) |
+| **database** | Database related issues |
+| **documentation** | Improvements or additions to documentation |
+| **duplicate** | This issue or pull request already exists |
+| **enhancement** | New feature or improvement to existing functionality |
+| **good first issue** | Good for newcomers |
+| **help wanted** | Extra attention is needed |
+| **invalid** | This doesn't seem right |
+| **question** | Further information is requested |
+| **release** | For Release PRs and version management |
+| **security** | Security related issues |
+| **small Change Request** | Small changes requested for format or similar issues that allow a PR to be merged |
+| **travel agent** | Travel agent role related issues |
+| **user** | General user related issues |
+| **wontfix** | This will not be worked on |
+
+When creating an issue, you MUST apply at least one label. An example of an issue can be seen below, with its corresponding labels.
+
+---
+
+### Issue Example: Task
+
+[Task]: Create endpoint for expense validation
+
+#### Description
+Create a new API endpoint that validates expense receipts for travel requests.
+
+#### Details
+- Validate receipt format and amount
+- Check against travel request budget
+- Return validation status and error messages
+- Endpoint: POST to API
+#### Checklist
+- [ ] Endpoint accepts expense data
+- [ ] Returns validation result
+- [ ] Error handling implemented
+- [ ] Unit tests written
+
+#### Labels
+API, backend, enhancement
+
+--- 
