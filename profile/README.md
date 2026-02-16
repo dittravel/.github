@@ -41,7 +41,7 @@ Dittravel is a ficticious software consulting firm created for the purposes of t
   - [Technology Stack :computer:](#technology-stack-computer)
   - [Version Control :herb:](#version-control-herb)
   - [Project Structure :file_folder:](#project-structure-file_folder)
-  - [Frontend Standards :computer:](#frontend-standards-computer)
+  - [Folder Structure 🗃️](#folder-structure-%EF%B8%8F)
   - [Best Practices :thumbsup:](#best-practices-thumbsup)
   - [Error Handling :warning:](#error-handling-warning)
   - [Security Practices :lock:](#security-practices-lock)
@@ -166,8 +166,6 @@ Scripts should be organized like this:
 4. **Views.sql** - Database views for more complex queries
 5. **Triggers.sql** - Automated database triggers
 
-
-
 ### Technology Stack :computer:
 
 - **Languages:** The project uses a mix of TypeScript and JavaScript within the Astro framework. Prefer TypeScript for new components, falling back to JavaScript only when necessary.
@@ -186,7 +184,80 @@ Scripts should be organized like this:
 - **File Organization:** Maintain clean folder structures, grouping related files (e.g., components in `src/components/`, utilities in `src/utils/`).
 - **Imports:** Use relative imports for modules, absolute for shared utilities.
 
-### Frontend Standards :computer:
+### Folder Structure 🗃️
+Note that everything for these structures is strictly based off of Cocosulting's folder structure.
+#### Backend File Structure Rules
+
+The Backend repository follows a pattern with a clear separation. Each directory has a specific purpose and must follow strict naming and organization conventions.
+
+#### Backend File Structure Rules
+The Backend repository four layers: Models → Services → Controllers → Routes.
+
+#### Directory Structure
+```
+/controllers      # {entity}Controller.js - HTTP request handlers
+/services         # {entity}Service.js - Business logic
+/models           # {entity}Model.js - Data schemas
+/routes           # {entity}Routes.js - API endpoints
+/middleware       # auth.js, validation.js, etc - Request processing
+/openapi          # {role}/*.yaml - API documentation by role
+/database         # Schema, configuration
+/certs            # SSL certificates
+```
+
+#### Naming Convention
+
+- **Controllers:** `userController.js`, `applicantController.js`, `accountsPayableController.js`, etc.
+- **Services:** `userService.js`, `applicantService.js`, etc.
+- **Models:** `userModel.js`, `applicantModel.js`, etc.
+- **Routes:** `userRoutes.js`, `applicantRoutes.js`, etc.
+- **Middleware:** Descriptive names - `auth.js`, `validation.js`, etc.
+- **OpenAPI:** One folder per role with YAML files - `openapi/admin/`, `openapi/user/`, etc.
+
+#### Key Rules
+- Use **camelCase** for all file names
+- Each major directory includes `README.md`
+- Database files go in `/database` directory
+- Tests use `.test.js` suffix
+
+#### Frontend File Structure Rules
+The Frontend mainly uses Astro. Files are organized by functionality with separations between components, pages, layouts, and utilities.
+
+#### Directory Structure
+```
+/components       # {Entity}Component.astro or Component.tsx - Reusable UI
+/pages            # {feature}.astro - Routes
+/layouts          # {Name}Layout.astro - Page templates
+/views            # {Role}View.astro - Role-specific views
+/styles           # global.css - Global styling
+/assets           # Images, icons, SVGs
+/config           # {name}-config.ts - Configuration files
+/data             # cookies.ts, users.csv - Static data
+/types            # {Entity}Data.ts - TypeScript types
+/utils            # {function}Name.ts - Utility functions
+/public           # Static files (logos, fonts)
+/cypress          # E2E tests organized by feature
+```
+
+#### Naming Convention
+
+- **Components:** `HeaderComponent.astro`, `Button.tsx`, `UserForm.astro`
+- **Pages:** `atender-solicitud.astro`, `completar-draft.astro`
+- **Layouts:** `Layout.astro`, `MainLayout.astro`, `HeaderLayout.astro`
+- **Views:** `AdminView.astro`, `ApplicantView.astro`, `AccountsPayableView.astro`
+- **Utilities:** `apiClient.ts`, `getPriorityDates.js`, `getStatus.js`
+- **Types:** `DepartmentData.ts`, `FormData.ts`, `TravelRoute.ts`
+- **Config:** `menu-config.ts`, `roles.ts`, `button.ts`
+- **Tests:** `create-request.cy.ts`, `date-validation.cy.ts`, `role-navigation.cy.ts`
+- **Assets:** `Logo.svg`, `user-icon.svg`, `favicon.svg`
+
+#### Key Rules
+
+- Use **PascalCase** for components, layouts, views, types
+- Use **kebab-case** for pages, folders, assets, tests
+- Use **camelCase** for utilities, functions, config
+- One entity/purpose per file
+- Keep components reusable
 
 #### Code Quality
 - Follow consistent naming conventions for variables, functions, and files.
