@@ -129,17 +129,60 @@ Dittravel's logo represents a clear connection to Ditta Consulting, our formativ
 - **Naming Conventions:** Follow lowerCamelCase for variables/functions, UpperCamelCase for classes.
 - **Best Practices:** Prefer `const` over `let`, use async/await, arrow functions, and avoid global side effects.
 
+##### Function Documentation
 For each function, include a comment block like:
 
 ```javascript
 /**
- * Get the amount of users in the system from a specified role.
- * @param {string} role - The role to filter users by.
- * @returns {number} The number of users.
+ * Calculate the total cost of a travel request including fees.
+ * @param {number} baseAmount - The base cost of the trip
+ * @param {number} feePercentage - The fee percentage to apply
+ * @returns {number} The total cost after fees
  */
+const calculateTotalCost = (baseAmount, feePercentage) => {
+  return baseAmount * (1 + feePercentage / 100);
+};
 ```
 
-Remove console.log statements before merging, leaving debug comments if needed.
+##### Inline Comments
+Use for clarifying complex logic:
+```javascript
+// Check if the request status is pending and has been waiting for more than 7 days
+if (request.status === 'pending' && daysSinceCreation > 7) {
+  sendReminderEmail(request.userId);
+}
+```
+
+##### Commented-Out Code
+Avoid leaving commented-out code unless it serves a clear purpose:
+```javascript
+// DO NOT DO THIS PLS
+// const oldFunction = (data) => {
+//   return data.map(item => item * 2);
+// };
+
+// REMOVE REDUNDANT CODE OR AT LEAST JUSTIFY KEEPING IT
+const newFunction = (data) => {
+  return data.filter(item => item > 0).map(item => item * 2);
+};
+```
+
+#### Remove Console Logs
+
+Remove `console.log` statements before merging, leaving debug comments if needed:
+```javascript
+// REMOVE DEBUGS SUCH AS:
+// console.log('User data:', userData);
+```
+
+### Variables ❗
+
+#### Variable Types
+- **Strings:** `const userName = "alice";`
+- **Numbers:** `const requestBudget = 1500.00;`
+- **Booleans:** Use `is`, `has`, `can`, `should` prefix - `const isApproved = true;`, `const hasExpenses = false;`
+- **Arrays:** Use plural names - `const userIds = [1, 2, 3];`, `const requestStatuses = ['pending', 'approved'];`
+- **Objects:** `const userProfile = { userId: 123, userName: "john", email: "john@example.com" };`
 
 ### Database Conventions 🔡:
 *This is based directly from Coconsulting's database files.*
